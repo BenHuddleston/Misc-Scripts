@@ -34,6 +34,8 @@ for filename in getfiles(filepath):
             if ".c_str()" in s:
                 s = s.replace(".c_str()", "")
 
+            read_data = read_data.replace(m.group(0), s)
+
         f.closed
 
     with open(filename, 'w+') as fnew:
