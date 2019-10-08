@@ -81,9 +81,8 @@ if len(args.files) != 2:
 
 files = {}
 
-if args.removeThreads:
-    for file in args.files:
-        files[file] = getFile(file)
+for file in args.files:
+    files[file] = getFile(file)
 
 print ("Removing events")
 for file in files:
