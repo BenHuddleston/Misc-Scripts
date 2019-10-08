@@ -84,9 +84,12 @@ files = {}
 for file in args.files:
     files[file] = getFile(file)
 
-print ("Removing events")
-for file in files:
-    files[file] = removeEventsForThread(file, files[file], args.removeThreads)
+if args.removeThreads:
+    print ("Removing events")
+    for file in files:
+        files[file] = removeEventsForThread(file,
+                                            files[file],
+                                            args.removeThreads)
 
 print ("Merging files")
 lines = merge(files)
