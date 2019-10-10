@@ -55,7 +55,7 @@ def merge(files):
                     line = line.replace("\n", ",\n")
             lines.append(line)
     if lines[-1][-2] == ",":
-        lines[-1][-2] = lines[-1][-2].replace(",", "")
+        lines[-1] = lines[-1].replace(",\n", "\n")
     lines.append("    ]\n")
     lines.append("}")
     return lines
